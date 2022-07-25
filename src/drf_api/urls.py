@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
 
-from core.views import TestView
+from core.views import PostView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
-    path("", TestView.as_view(), name="test"),
+    path("", PostView.as_view(), name="test"),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path("api/token/", obtain_auth_token, name="obatain-token"),
 ]
